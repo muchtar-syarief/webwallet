@@ -40,7 +40,7 @@ export function Transactions(){
     return () => {
       clearInterval(inter)
     }
-  }, [])
+  }, [client])
 
   const getAmount = (tx: Tx): number => {
     let amount = 0
@@ -51,6 +51,7 @@ export function Transactions(){
 
     vins.map(dat => {
       amount -= dat.value
+      return dat
     })
 
     const vouts = tx.vout.filter(value => {
@@ -62,6 +63,7 @@ export function Transactions(){
 
     vouts.map(dat => {
       amount += Number(dat.value)
+      return dat
     })
 
     return amount

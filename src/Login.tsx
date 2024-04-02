@@ -42,12 +42,12 @@ const isImportState = atom<boolean>({
   default: false
 })
 
-interface SeedForm {
+interface SeedFormType {
   seed?: string
   seedOnChange: (data: string) => void
 }
 
-function SeedForm({seed, seedOnChange}: SeedForm){
+function SeedForm({seed, seedOnChange}: SeedFormType){
   const [isImport, setImport] = useRecoilState(isImportState)
   
   const newHDSeed = () => {
@@ -59,7 +59,7 @@ function SeedForm({seed, seedOnChange}: SeedForm){
   useEffect(() => {
     const hdseed = new Mnemonic().toString()
     seedOnChange(hdseed)
-  }, [])
+  }, [seedOnChange])
 
 
   return (
@@ -85,7 +85,7 @@ export default function Login(){
   const toast = useToast()
   
   const [seed, setSeed] = useState<string>("")
-  const [wallet, setWallet] = useRecoilState(walletDataFilter)
+  const [, setWallet] = useRecoilState(walletDataFilter)
   const [password, setPassword] = useState<string>("")
   const [rePassword, setRePassword] = useState<string>("")
   const isImport = useRecoilValue(isImportState)

@@ -11,7 +11,7 @@ import { getUtxoAddress } from './utils/explorer';
 
 
 function BalanceData(){
-  const [wallet, setWallet] = useRecoilState(walletDataFilter)
+  const [wallet] = useRecoilState(walletDataFilter)
   const client = useQueryClient()
 
   const balanceQuery = useQuery({
@@ -23,6 +23,7 @@ function BalanceData(){
           let bal = 0
           data.map(utxo => {
             bal += utxo.amount
+            return utxo
           })
           
           return bal
@@ -58,7 +59,7 @@ function BalanceData(){
 }
 
 export default function Balance() {
-  const client = useQueryClient()
+  // const client = useQueryClient()
   const [wallet, setWallet] = useRecoilState(walletDataFilter)
   const isLogin = wallet.address.length > 0
   const isSeed = wallet.encSeed ? true: false
@@ -110,7 +111,7 @@ export default function Balance() {
 
 export function MenuCard(){
 
-  const [wallet, setWallet] = useRecoilState(walletDataFilter)
+  const [, setWallet] = useRecoilState(walletDataFilter)
   const deleteWallet = () => {
     setWallet({
       address: [],
