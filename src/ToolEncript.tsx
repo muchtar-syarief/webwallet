@@ -1,5 +1,5 @@
-import { Mnemonic, PrivateKey } from '@unifyroom/unfycore-lib'
-import CryptoJS from 'crypto-js'
+import { Mnemonic, PrivateKey } from "@unifyroom/unfycore-lib";
+import CryptoJS from "crypto-js";
 
 export function encript(text: string, key: string): string {
     try {

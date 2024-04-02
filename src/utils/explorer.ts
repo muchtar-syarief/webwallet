@@ -111,11 +111,11 @@ export async function sendToAddress(addresses: string[], address: string, sendAm
     throw new Error("issuffient balance.")
   }
 
-  if(!address || address == "") {
+  if(!address || address === "") {
     throw new Error("address empty.")
   }
 
-  if(addresses.length == 0){
+  if(addresses.length === 0){
     throw new Error("addresses wallet empty.")
   }
 

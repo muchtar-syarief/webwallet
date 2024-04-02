@@ -1,15 +1,27 @@
-import React from 'react';
-import {  Card, CardBody, CardHeader, Container, Heading, Tabs, Tab, TabList, TabPanels, TabPanel, Box, Text } from '@chakra-ui/react';
-import Balance from './Balance';
-import { Transactions } from './Transactions';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { walletDataFilter } from './state/WalletState';
-import Send from './Send';
-import { tabIndexState } from './state/TabState';
+import {
+  Box,
+  Card,
+  CardBody,
+  CardHeader,
+  Container,
+  Heading,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+} from "@chakra-ui/react";
+import { useRecoilState, useRecoilValue } from "recoil";
+import Balance from "./Balance";
+import Send from "./Send";
+import { Transactions } from "./Transactions";
+import { tabIndexState } from "./state/TabState";
+import { walletDataFilter } from "./state/WalletState";
 
 function App() {
-  const wallet = useRecoilValue(walletDataFilter)
-  const [tabi, setTabi] = useRecoilState(tabIndexState)
+  const wallet = useRecoilValue(walletDataFilter);
+  const [tabi, setTabi] = useRecoilState(tabIndexState);
 
   return (
     <Container>
@@ -21,20 +33,16 @@ function App() {
 
       <Card my={6}>
         <CardHeader>
-          <Heading size='md'>Address</Heading>
-          {
-            wallet.address.map(addr => {
-              return <Box key={addr}>
-                <Text>
-                  {addr}
-                </Text>
+          <Heading size="md">Address</Heading>
+          {wallet.address.map((addr) => {
+            return (
+              <Box key={addr}>
+                <Text>{addr}</Text>
               </Box>
-            })
-          }
+            );
+          })}
         </CardHeader>
-        <CardBody>
-          
-        </CardBody>
+        <CardBody></CardBody>
       </Card>
 
       <Card mb={12}>
@@ -43,7 +51,6 @@ function App() {
             <TabList>
               <Tab>Send</Tab>
               <Tab>Transactions</Tab>
-              
             </TabList>
 
             <TabPanels>

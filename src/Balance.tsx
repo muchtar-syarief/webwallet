@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { StatLabel, StatNumber, Stat, Avatar, HStack, Box, Text, ButtonGroup, Button, useDisclosure, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, FormErrorMessage, Menu, IconButton, MenuList, MenuItem, MenuButton } from "@chakra-ui/react";
-import { atom, useRecoilState, useRecoilValue } from 'recoil';
-import { useMutation, useQuery, useQueryClient } from 'react-query';
-import { decript, encript, encriptPassword } from './ToolEncript';
-import { walletDataFilter } from './state/WalletState';
-import { Mnemonic } from '@unifyroom/unfycore-lib';
 import { DeleteIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { Avatar, Box, Button, ButtonGroup, FormControl, FormErrorMessage, FormLabel, HStack, IconButton, Input, Menu, MenuButton, MenuItem, MenuList, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stat, StatLabel, StatNumber, Text, useDisclosure } from "@chakra-ui/react";
+import { Mnemonic } from '@unifyroom/unfycore-lib';
+import React, { useEffect, useState } from 'react';
+import { useMutation, useQuery, useQueryClient } from 'react-query';
+import { useRecoilState } from 'recoil';
 import Login from './Login';
+import { decript } from './ToolEncript';
+import { walletDataFilter } from './state/WalletState';
 import { getUtxoAddress } from './utils/explorer';
 
 

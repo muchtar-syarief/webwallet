@@ -1,10 +1,10 @@
-import { TableContainer, Table, Thead, Tr, Th, Tbody, Td, Tfoot, Button } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { getTxAddress } from "./utils/explorer";
-import { useRecoilValue } from "recoil";
-import { walletDataFilter } from "./state/WalletState";
-import { Tx } from "./models/transaction";
+import { Button, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
+import { useEffect } from "react";
 import { useQuery, useQueryClient } from "react-query";
+import { useRecoilValue } from "recoil";
+import { Tx } from "./models/transaction";
+import { walletDataFilter } from "./state/WalletState";
+import { getTxAddress } from "./utils/explorer";
 
 
 
