@@ -30,6 +30,6 @@ jobs:
 
       - name: Release action
         uses: ncipollo/release-action@v1
-          with:
-            allowUpdates: true
-            artifacts: "${{ github.ref_name }}.zip"
+        with:
+          allowUpdates: true
+          artifacts: "${{ github.ref_name }}.zip"
