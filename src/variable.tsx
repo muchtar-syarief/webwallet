@@ -1,6 +1,6 @@
 
 
-export const hostExplorer = 'http://localhost:3001'
+export const hostExplorer = 'https://insightapi.unifyroom.com'
 
 
 export var DUST_AMOUNT_IN_UNFY = 0.00000572
